@@ -1,0 +1,930 @@
+/* CSS MAP 
+*
+*	1. Define Custom Fonts
+*	2.
+*	3.
+*	4.
+*	5.
+*	6. 
+*
+*
+*/
+
+/* 1. DEFINE FONTS */
+/* Baskerville Font */
+@font-face {
+	font-family: Baskerville;
+	src: url('./font/Baskerville.ttf') format('truetype');
+}
+/* OpenSans-Light Font */
+@font-face {
+	font-family: OpenSans-Light;
+	src: url('./font/OpenSans-Light.ttf') format('truetype');
+}
+/* OpenSans-SemiBold Font */
+@font-face {
+	font-family: OpenSans-SemiBold;
+	src: url('./font/OpenSans-SemiBold.ttf') format('truetype');
+}
+/* OpenSans-SemiBoldItalic Font */
+@font-face {
+	font-family: OpenSans-SemiBoldItalic;
+	src: url('./font/OpenSans-SemiBoldItalic.ttf') format('truetype');
+}
+
+body {
+	color: #FFFFFF;
+	overflow-x: hidden;
+	overflow-y:hidden;
+}
+
+header {
+	height: 8%;
+	width: 100%;
+	z-index:1;
+}
+
+
+/* =============== GAME =============== */
+
+.game_counter {
+	float: left;
+	height: 190px;
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-left: 2%;
+	font-family: OpenSans-SemiBold;
+	font-size: 16pt;
+	display: none;
+}
+
+.timer {
+	padding-top: 20px;
+	float: left;
+	height: 190px;
+	display: none;
+}
+
+.timer_text {
+	font-family: OpenSans-SemiBold;
+	font-size: 14pt;padding-left: 11px;padding-top: 1px;
+}
+
+.timer_image {
+	position: absolute;
+	top: 25px;
+	margin-left: 5px;
+	height: 34px;
+	width: 34px;
+}
+
+.game_sp_title {
+	font-family: OpenSans-SemiBold;
+	font-weight: 100;
+	letter-spacing: 2px;
+	font-size: 42pt;
+	padding-top: 15%;
+}
+
+.game_sp_tagline {
+	font-family: OpenSans-SemiBoldItalic;
+	font-size: 16pt;
+	padding-top: 20px;
+	padding-bottom: 65px;
+}
+
+
+.game_sp_button {
+	cursor: pointer;
+	width: 190px;
+	height: 45px;
+	background-color: rgba(255,255,255, 0.3);
+	border-radius: 8px;
+	font-family: OpenSans-SemiBoldItalic;
+	font-size: 20px;
+	left: 0; right: 0;
+	margin: auto;
+	line-height: 42px;
+	border: 1px solid white;
+}
+
+.difficulty_container {
+	display: inline-block;
+	position:relative;
+	margin-top: 65px;
+	font-family: OpenSans-SemiBold;
+}
+
+.game_sp_easy_button {
+	float: left;
+	width: 110px;
+	height: 36px;
+	border-radius: 8px;
+	margin-right: 20px;
+}
+
+.diff_e_img {
+	position: relative;
+	width: 32px;
+	height: 16px;
+	margin-top: 10px;
+
+}
+
+.diff_m_img {
+	position: relative;
+	width: 32px;
+	height: 16px;
+	margin-top: 10px;
+}
+
+.diff_h_img {
+	position: relative;
+	width: 32px;
+	height: 16px;
+	margin-top: 10px;
+	
+}
+
+.game_sp_med_button {
+	float: left;
+	width: 110px;
+	height: 36px;
+	border-radius: 8px;
+	margin-right: 20px;
+}
+
+.game_sp_hard_button {
+	float: left;
+	width: 110px;
+	height: 36px;
+	border-radius: 8px;
+}
+
+.game_start_page {
+	width: 80%;
+    height: 650px;
+	position: absolute;
+    left: 0; right: 0;
+    top: 0; bottom: 0;
+	margin: auto;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+	padding: 20px;
+	text-align: center;
+}
+
+.dictionary_game {
+	width: 800px;
+    height: 800px;
+	position: absolute;
+    left: 0; right: 0;
+    top: 0; bottom: 0;
+	margin: auto;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+	padding: 20px;
+	text-align: left;
+	display: none;
+	
+}
+
+.header_text{
+	width: 100px;
+	margin-bottom: -80px;
+	margin-top: 50px;
+	padding: 3px;
+	font-family: OpenSans-SemiBold;
+	font-size: 15pt;
+}
+
+.answer_container {
+	width: 100%;
+	height: 210px;
+	margin-top: 30px;
+}
+
+.game_answerbox {
+	position: relative;
+	width: 750px;
+	height: 50px;
+	line-height: 25px;
+	background: rgba(255,255,255, 0.2);
+	padding: 20px;
+	margin-top: 25px;
+	border-radius: 8px;
+	color: #FFF;
+	font-family: OpenSans-Light;
+	font-size: 15pt;
+	font-style: italic;
+	border: 2px solid transparent;
+	cursor: pointer;
+}
+
+.game_answerbox:hover {
+	border: 2px solid #FFF;
+}
+
+
+.game_slide_container { 
+	display: none;
+	transition: transform 250ms linear 0s, margin-left 250ms linear 0s;
+}
+
+/* Fading animation */
+.fade {
+	transition: transform 0ms linear 0s;
+}
+
+.slide_left {
+	transform: translateX(-1000px);
+}
+
+.slide_in_left {
+	margin-left: -1000px;
+}
+
+.answerbox_correct {
+	position: absolute;
+    top: -15px;
+    right: -15px;
+	height: 30px;
+	width: 30px;
+}
+
+.answerbox_no_result {
+	display: none;
+}
+
+.answerbox_incorrect {
+	position: absolute;
+    top: -15px;
+    right: -15px;
+	height: 30px;
+	width: 30px;	
+}
+
+.answer_selected {
+	border: 2px solid #FFF;
+}
+
+.game-close-img {
+	float: right;
+	height: 30px;
+	width: 30px;
+	padding-top: 20px;
+	padding-right: 2%;
+	transition: transform .2s;
+	cursor: pointer;
+	display: none;
+}
+
+.game_pagination {
+	height: 50px;
+	display: inline-block;
+	position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+	list-style: none;
+}
+
+.home_img {
+	height: 30px;
+	width: 36px;
+	cursor: pointer;
+	transition: transform .2s;
+}
+
+.home_icon {
+	float: left;
+	height: 50px;
+	padding-top: 25px;
+	padding-left: 30px;
+}
+
+.home_img:hover{
+	transform: scale(1.5);
+}
+
+.game_pagination li {
+	position: relative;
+	display: block;
+	float: left;
+	margin: 0 5px;
+	width: 12px;
+	height: 12px;
+}
+
+.game_pagination a {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	outline: none;
+	border-radius: 50%;
+	text-indent: -999em;
+	position: absolute;
+}
+
+.dotstyle-fillup li a {
+	overflow: hidden;
+	background-color: rgba(0,0,0,0);
+	box-shadow: inset 0 0 0 2px rgba(255,255,255,1);
+	transition: background 0.3s;
+}
+
+.dotstyle-fillup li a::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	height: 0;
+	left: 0;
+	width: 100%;
+	background-color: #fff;
+	box-shadow: 0 0 1px #fff;
+	transition: height 0.3s;
+}
+
+.dotstyle-fillup li.current a::after {
+	height: 100%;
+}
+
+
+.result_page {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -60%);
+	max-width: 80%;
+	overflow: hidden;
+	padding: 20px;
+	text-align: left;
+    display: none;
+}
+
+.spacer_center {
+	width: 125px;
+	height: 0px;
+	border: 2px solid #FFFFFF;
+	background-color: #FFFFFF;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 40px;
+}
+
+.score_placeholder {
+	font-family: OpenSans-Light;
+	font-size: 15pt;
+	text-align: left;
+	padding-left: 63px;
+	margin-bottom: -45px;
+}
+
+.score {
+	font-family: Baskerville;
+	font-size: 150px;
+	text-align: center;
+	margin-bottom: -20px;
+}
+
+.rp_icon_container {
+	margin: 0 auto;
+	width: 121px;
+}
+
+.rp_home_img {
+	height: 44px;
+	width: 48px;
+	margin-right: 25px;
+	transition: transform .2s;
+	cursor: pointer;
+}
+
+.rp_home_img:hover {
+	transform: scale(1.2);
+}
+
+.rp_retry_img {
+	height: 44px;
+	width: 44px;
+	transition: transform .2s;
+	cursor: pointer;
+}
+
+.rp_retry_img:hover {
+	transform: scale(1.2);
+}
+
+.share_result_container {
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+	height: 120px;
+	width: 63%;
+	background-color: rgba(255,255,255, 0.3);
+	border: 1px solid white;
+	border-radius: 8px;
+	font-family: OpenSans-SemiBold;
+	font-size: 12pt;
+	text-align: center;
+}
+
+.share_result_header {
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.rp_fb_img {
+	margin-right: 30px;
+	height: 52px;
+	width: 52px;
+	transition: transform .2s;
+	cursor: pointer;
+}
+
+.rp_fb_img:hover {
+	transform: scale(1.2);
+}
+
+.rp_tw_img:hover {
+	transform: scale(1.2);
+}
+
+.rp_tw_img {
+	height: 52px;
+	width: 52px;
+	transition: transform .2s;
+	cursor: pointer;
+}
+
+.menu {
+	display:inline;
+	float:left;
+	margin-left: 2%;
+	padding-top: 12px;
+}
+
+.menu-item {
+	
+	display:inline;
+	float:left;
+	width: 70px;
+	text-align: center;
+	font-family: OpenSans-SemiBold;
+	font-size: 12pt;
+	cursor: pointer;
+	color; #fff;
+	transition: transform .4s;
+	z-index:1;
+}
+
+.menu-item:hover{
+	transform: scale(1.2);
+}
+
+.search-img {
+	display:inline;
+	float:right;
+	height: 35px;
+	width: 35px;
+	transition: transform .2s;
+	cursor: pointer;
+	margin-right: 2%;
+	padding-top: 15px;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+}
+
+.dictionary {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -60%);
+	max-width: 80%;
+}
+
+h1 {
+	font-family: Baskerville;
+	font-weight: 100;
+	letter-spacing: 2px;
+	margin-bottom: -5px;
+	line-height: 1.3em;
+	word-wrap: break-word;
+	
+}
+
+.spacer {
+	width: 125px;
+	height: 0px;
+	border: 2px solid #FFFFFF;
+	background-color: #FFFFFF;
+}
+
+.small {
+	max-width: 38px;
+}
+
+.finetic {
+	display: inline-block;
+	height: 20px;
+	font-family: Baskerville;
+	font-size: 28pt;
+	padding-top: 20px;
+	
+}
+
+.speaker {
+	display: inline-block;
+	height: 27px;
+}
+
+.speaker-img {
+	display: block;
+	margin-top: 5px;
+	padding-left: 15px; 
+	height: 25px;
+	width: 25px;
+	transition: transform .2s;
+}
+
+.type {
+	font-family: OpenSans-SemiBoldItalic;
+	font-size: 24pt;
+	font-style: italic;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.title {
+	font-family: OpenSans-SemiBold;
+	font-size: 16pt;
+	padding-bottom: 10px;
+}
+
+p {
+	font-family: OpenSans-Light;
+	font-size: 15.8pt;
+	font-style: normal;
+}
+
+.italic {
+	font-style: italic;
+}
+
+/* Footer and everything related to the footer */
+footer {
+	position: fixed;
+    left: 2%;
+    bottom: 0;
+    width: 96%;
+	height: 80px;
+	border-top: 2px solid #FFFFFF;
+}
+
+.date {
+	float: left;
+	height: 80px;
+	font-family: OpenSans-SemiBold;
+	font-size: 18pt;
+	line-height: 80px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-radius: 15px;
+}
+
+.icons {
+	float: right;
+	padding-top: 20px;
+	height: 35px;
+	line-height: 37px;
+}
+.twitter-icon {
+	height: 35px;
+	width: 35px;
+	padding-right: 15px;
+	transition: transform .2s;
+}
+.github-icon {
+	height: 35px;
+	width: 35px;
+	padding-right: 15px;
+	transition: transform .2s;
+}
+.opaque-icon {
+	height: 35px;
+	width: 35px;
+	padding-right: 15px;
+	transition: transform .2s;
+}
+.game-icon {
+	margin-top: 25px;
+	margin-bottom: 20px;
+	margin-left: 5px;
+	height: 30px;
+	width: 50px;
+	transition: transform .2s;
+	
+}
+
+/* Search Overlay */
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+.hide {
+	display: none;
+}
+
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    font-size: 80px;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #F1F1F1;
+}
+
+.overlay a {
+	text-decoration: none;
+	 color: #FFFFFF;
+}
+
+.search_container {
+	position:absolute; /*it can be fixed too*/
+    left: 0; 
+	right: 0;
+    top: 0; 
+	bottom: 0;
+    margin: auto;
+	height: 100px;
+	width: 80%;
+	animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+.search_textbox {
+	display: inline-block;
+	width: 75%;
+	height: 35px;
+	font-family: OpenSans-Light;
+	font-size: 14pt;
+	padding-left: 10px;
+}
+.search_button {
+	cursor: pointer;
+	display: inline-block;
+	height: 43px;
+	width: 80px;
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	font-family: OpenSans-Light;
+	font-size: 14pt;
+	color: #000000;
+	line-height: 45px;
+	padding-left: 22px;
+	margin-left: 15px;
+	transition: background-color 0.5s ease;
+}
+
+/* Prevents text from being selected */
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+/* Prevents <a> tags from showing decoration */
+a {
+	text-decoration: none !important;
+	border: 0 !important;
+	color: #fff;
+}
+
+/* Icon Hover Effects */
+.github-icon:hover {
+	transform: scale(1.5);
+}
+.opaque-icon:hover {
+	transform: scale(1.5);
+}
+.twitter-icon:hover {
+	transform: scale(1.5);
+}
+.game-icon:hover {
+	transform: scale(1.5);
+}
+.search-img:hover {
+	transform: scale(1.5);	
+}
+.game-close-img:hover {
+	transform: scale(1.5);
+}
+.speaker-img:hover {
+	transform: scale(1.5);
+}
+.search_button:hover {
+	background-color: #29C0E7;
+	color: #FFFFFF;
+}
+
+/* Animation keyframes */
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width:600px){
+	
+	h1 {
+		word-wrap: unset;
+		font-size: 35pt!important;
+	}
+	
+	.game_sp_title {
+		font-size: 30pt;
+	}
+	
+	.dictionary {
+		transform: translate(-50%, -55%);
+		width: 100%;
+		z-index: 1;
+	}
+	
+	.game_answerbox {
+		width: 97%!important;
+		min-height: 60px;
+		max-height: 120px;
+		font-size: 10pt;
+		padding: 5px;
+		line-height:16px;
+	}
+	
+	.game_pagination {
+		top: 85%;
+		width: 100%;
+		transform: translate(-28%, 0%);
+	}
+	
+	.icons {
+		padding-top: 7px;
+		
+	}
+	
+	.twitter-icon {
+		padding-right: 5px;
+	}
+	
+	.github-icon {
+		padding-right: 5px;
+	}
+	
+	.opaque-icon {
+		padding-right: 5px;
+	}
+	
+	.date {
+		height: 50px;
+		line-height: 50px;
+		margin-top: -1px;
+		padding-left: 5px;
+	}
+	
+	.type {
+		font-size: 12pt;
+		padding-top: 18px;
+		padding-bottom: 10px;
+	}
+	
+	.finetic {
+		padding-top: 5px;
+		font-size: 2pt;
+	}
+	
+	p {
+		font-size: 10pt;
+	}
+	
+	.speaker-img {
+		display: block;
+		margin-top: 8px;
+		padding-left: 5px; 
+		height: 20px;
+		width: 20px;
+	}
+	
+	.search_button {
+		float: center;
+		width: 100%;
+		margin-top: 15px;
+		text-align: center;
+		padding-left: 0px;
+		margin-left: 0px;
+	}
+	
+	.search_textbox {
+		width: 95%;
+	}
+	
+	.game_word {
+		margin-top: 80px;
+	}
+	
+	.header_text {
+		font-family: OpenSans-SemiBoldItalic;
+		margin-top: 100px;
+	}
+	
+	.game_start_page {
+		padding: 0px;
+	}
+	
+	footer {
+		height: 50px;
+	}
+	
+	.closebtn { 
+		right: 15px;
+		top: 0px;
+		font-size: 36pt;
+	}
+	
+	.game_counter {
+			padding-top: 5px;
+	}
+	
+	.timer {
+		padding-top: 5px;
+	}
+	
+	.timer_image {
+		top:10px;
+	}
+	
+	.dictionary_game {
+		max-width: 90%;
+		max-height: 85%;
+		padding-top: 0px;
+		top: -10%;
+		
+	}
+	.game-close-img {
+		padding-top: 5px;
+		padding-right: 5px;
+		height: 25px;
+		width: 25px;
+		z-index: 1;
+	}
+		
+
+}
