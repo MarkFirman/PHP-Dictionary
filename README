@@ -1,0 +1,9 @@
+1. Open .\system\class\database.class.php
+	Line 13-16: Change database host, user, pass and dbname
+
+2. Open .\system\class\system.class.php
+	Line 13-15: Set Oxford API Key, ID and Language
+
+3. Import mydictionary.sql into your phpmyadmin DB
+
+4. Admin panel accessed from HOST_URL/admin
